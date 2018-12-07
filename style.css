@@ -1,13 +1,13 @@
 
 @font-face {
   font-family: EksellDisplay;
-  src: url('EksellDisplay-Large.otf');
+  src: url("EksellDisplay-Large.otf") format("opentype");
 }
 
 @font-face {
   font-family: EksellDisplay;
   font-weight: bold;
-  src: url('EksellDisplay-Large.otf');
+  src: url("EksellDisplay-Large.otf");
 }
 
 h1 {
@@ -16,7 +16,10 @@ h1 {
 
 .title {
   font-family: EksellDisplay;
-  font-size: 30pt;
+  font-size: 100pt;
+  background: linear-gradient(to right, #000000 0%, #616161 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h1.intro {
