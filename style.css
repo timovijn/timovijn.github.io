@@ -1,0 +1,9 @@
+@font-face {
+  font-family: EksellDisplay;
+  src: url('EksellDisplay-Large.otf');
+}
+@font-face {
+  font-family: EksellDisplay;
+  font-weight: bold;
+  src: url('EksellDisplay-Large.otf');
+}
