@@ -14,7 +14,7 @@ h1 {
    font-family: EksellDisplay
 }
 
-.intro {
+h.intro {
     font-family: EksellDisplay
     color: red;
     align-items: center;
