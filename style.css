@@ -11,11 +11,11 @@
 }
 
 h1 {
-   font-family: EksellDisplay
+  font-family: EksellDisplay;
 }
 
 h1.intro {
-    font-family: EksellDisplay
-    color: red;
-    align-items: center;
+  font-family: EksellDisplay;
+  color: red;
+  text-align: center;
 }
