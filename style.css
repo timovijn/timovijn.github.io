@@ -10,6 +10,10 @@
   src: url("EksellDisplay-Large.otf");
 }
 
+::selection {
+  background: #8C9EFF; /* WebKit/Blink Browsers */
+}
+
 h1 {
   font-family: EksellDisplay;
 }
@@ -28,22 +32,79 @@ h1.intro {
   text-align: center;
 }
 
-div {
+div.poster_text {
   font-family: EksellDisplay;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-	width: 100px;
 	height: 100px;
-	background-color: none;
+  width: 100px;
+  height: 100px;
+  background-color: none;
 
-	position: absolute;
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
 
-	margin: auto;
+  z-index: 2;
+}
+
+img {
+  /*  To contain the image to the confines of the div  */
+  max-width: 100%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.poster
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 40%;
+  background-color: #ccc;
+  border-radius: 0px;
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+.poster:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 0%, white 100%);
+  opacity: 0.6;
+}
+
+html {
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background: #70bg32;
+    background-repeat:no-repeat;
+    background: linear-gradient(to right, #FAFAFA 0%, #F5F5F5 100%);
 }
