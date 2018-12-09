@@ -1,7 +1,7 @@
 
 @font-face {
-  font-family: EksellDisplay;
-  src: url("EksellDisplay-Large.otf") format("opentype");
+  font-family: EksellDisplayLarge;
+  src: url("Canela-Regular.otf") format('otf');
 }
 
 @font-face {
@@ -19,7 +19,7 @@ h1 {
 }
 
 .title {
-  font-family: EksellDisplay;
+  font-family: EksellDisplayLarge;
   font-size: 100pt;
   background: linear-gradient(to right, #000000 0%, #616161 100%);
   -webkit-background-clip: text;
