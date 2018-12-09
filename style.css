@@ -1,11 +1,16 @@
 
 @font-face {
   font-family: Canela;
-  src: url('Fonts/Canela-Regular.otf');
+  src: url('Fonts/Canela-Medium.otf');
+}
+
+html {
+  background-image: linear-gradient(to right, #FFFFFF, #FAFAFA);
+  -webkit-tap-highlight-color: #8C9EFF;
 }
 
 ::selection {
-  color: white;
+  color: blue;
   background-color: #8C9EFF; /* WebKit/Blink Browsers */
 }
 
@@ -20,7 +25,7 @@
 }
 
 .poster {
-  box-shadow: 50px 50px 30px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 50px 50px 30px rgba(0, 0, 0, 0.1); */
   background: none;
   height: 400px;
   width: 300px;
@@ -33,7 +38,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: -50px;
-  clip-path: polygon(0 50px, 300px 50px, 300px 450px, 0 450px);
+  -webkit-clip-path: polygon(0 50px, 300px 50px, 300px 450px, 0 450px);
 }
 
 .poster_text {
@@ -44,7 +49,14 @@
   transform: translateZ(50px);
   position: absolute;
   color: white;
-  font-size: 50pt;
+  font-size: 40pt;
   justify-content: center;
   align-items: center;
+}
+
+.poster_shadow {
+  background: #536DFE; /* rgba(0, 0, 0, 0.5); */
+  z-index: -1;
+  transform: translateZ(-100px);
+  filter: blur(25px);
 }
