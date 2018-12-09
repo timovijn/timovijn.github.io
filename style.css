@@ -20,7 +20,7 @@
 }
 
 .poster {
-  box-shadow: 0 20px 27px rgba(0, 0, 0, 0.05);
+  box-shadow: 50px 50px 30px rgba(0, 0, 0, 0.1);
   background: none;
   height: 400px;
   width: 300px;
