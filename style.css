@@ -9,80 +9,46 @@
   background-color: #8C9EFF; /* WebKit/Blink Browsers */
 }
 
-h1 {
-  font-family: Canela;
-  font-weight: normal;
-}
-
 .title {
+  background: none;
+  color: white;
+  height: 400px;
+  width: 300px;
   font-family: Canela;
-  font-size: 100pt;
+  font-size: 25pt;
   font-weight: normal;
-  background: linear-gradient(to right, #000000 0%, #616161 100%);
+  /* background: linear-gradient(to right, #000000 0%, #616161 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;*/
 }
 
-div.poster_text {
-  font-family: EksellDisplay;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100px;
-  height: 100px;
-  background-color: none;
-
-  position: absolute;
-  top:0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-
-  z-index: 2;
+.poster {
+  background: none;
+  height: 400px;
+  width: 300px;
 }
 
-img {
-  /*  To contain the image to the confines of the div  */
+.poster_image{
   max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
 }
 
-html {
-    height: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background: #70bg32;
-    background-repeat:no-repeat;
-    background: linear-gradient(to right, #FAFAFA 0%, #F5F5F5 100%);
+.title_text {
+  margin: auto;
+  position: absolute;
+  top: 10%; left: 10%; bottom: 0; right: 0;
 }
 
-html {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-	box-sizing: inherit;
-}
+.center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 
-
-.tilt-logo {
-	width: 200px;
-	height: 200px;
-	background-color: #7e56ff;
-	background-image: linear-gradient(150deg, #5a00ff 0%, #ff1ff7 100%, #ff1ff7 100%);
-}
-
-.tilt-logo-inner {
-	transform: translateZ(50px) translateY(-50%) translateX(-50%);
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	color: white;
-	font-size: 1.9rem;
-}
-
-.tilt-movie, .tilt-movie img {
-	width: 200px;
-	height: 300px;
+  /*this to solve "the content will not be cut when the window is smaller than the content": */
+  max-width:100%;
+  max-height:100%;
+  overflow:auto;
 }

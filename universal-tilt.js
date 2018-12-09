@@ -1,99 +1,105 @@
-export default class UniversalTilt {
+/*!
+* universal-tilt.js v0.5
+* Created 2018 by Jakub Biesiada
+* Original idea: https://github.com/gijsroge/tilt.js
+* MIT License
+*/
+
+class UniversalTilt {
   constructor(elements, settings = {}) {
+    // call init function when tilt elements length > 0
     if (elements.length > 0) {
       this.init(elements, settings);
       return;
+
+    // return when no tilt elements
     } else if (elements.length === 0) {
       return;
+
+    // set tilt element
     } else {
       this.element = elements;
     }
 
+    // set settings
     this.settings = this.settings(settings);
 
+    // reverse change
     this.reverse = this.settings.reverse ? -1 : 1;
 
-    if (this.settings.shine) this.shine();
+    // call shine function if shine setting enabled
+    if (this.settings.shine) {
+      this.shine();
+    }
 
-    this.element.style.transform = `perspective(${
-      this.settings.perspective
-    }px)`;
+    this.element.style.transform = `perspective(${this.settings.perspective}px)`;
 
+    // call events function
     this.addEventListeners();
   }
 
   init(elements, settings) {
-    for (const element of elements) {
-      this.universalTilt = new UniversalTilt(element, settings);
-    }
-  }
-
-  isMobile() {
-    if (
-      window.DeviceMotionEvent &&
-      'ontouchstart' in document.documentElement
-    ) {
-      return true;
+    // split parallax elements
+    for (var element = 0; element < elements.length; element++) {
+      new UniversalTilt(elements[element], settings);
     }
   }
 
   addEventListeners() {
-    if (!navigator.userAgent.match(this.settings.exclude)) {
-      if (this.isMobile()) {
-        window.addEventListener('devicemotion', e => this.onDeviceMove(e));
-      } else {
-        if (this.settings['position-base'] === 'element') {
-          this.base = this.element;
-        } else if (this.settings['position-base'] === 'window') {
-          this.base = window;
-        }
+    // if is mobile device
+    if (window.DeviceMotionEvent && "ontouchstart" in document.documentElement) {
+      this.onDeviceMoveBind = this.onDeviceMove.bind(this);
 
-        this.base.addEventListener('mouseenter', e => this.onMouseEnter(e));
-        this.base.addEventListener('mousemove', e => this.onMouseMove(e));
-        this.base.addEventListener('mouseleave', e => this.onMouseLeave(e));
+      // devicemotion event
+      window.addEventListener('devicemotion', this.onDeviceMoveBind);
+
+    // if is desktop
+    } else {
+      if (this.settings['position-base'] === 'element') {
+        this.onMouseMoveBind = this.onMouseMove.bind(this);
+
+        // mousemove event
+        this.element.addEventListener('mousemove', this.onMouseMoveBind);
+
+        // mouseleave event
+        this.element.addEventListener('mouseleave', () => this.onMouseLeave());
+      } else if (this.settings['position-base'] === 'window') {
+        this.onMouseMoveBind = this.onMouseMove.bind(this);
+
+        // mousemove event
+        window.addEventListener('mousemove', this.onMouseMoveBind);
+
+        // mouseleave event
+        window.addEventListener('mouseleave', () => this.onMouseLeave());
       }
     }
   }
 
-  onMouseEnter(e) {
+  onMouseMove(event) {
+    // set event
+    this.event = event;
     this.updateElementPosition();
-    this.transitions();
 
-    if (typeof this.settings.onMouseEnter === 'function') {
-      this.settings.onMouseEnter(this.element);
+    // optimize movement effect
+    if (window.DeviceMotionEvent && "ontouchstart" in document.documentElement) {
+      this.update();
+    } else {
+      window.requestAnimationFrame(() => this.update());
     }
   }
 
-  onMouseMove(e) {
-    this.event = e;
-
-    this.updateElementPosition();
-    window.requestAnimationFrame(() => this.update());
-
-    if (typeof this.settings.onMouseMove === 'function') {
-      this.settings.onMouseMove(this.element);
+  onMouseLeave() {
+    if (window.DeviceMotionEvent && "ontouchstart" in document.documentElement) {
+      this.reset();
+    } else {
+      window.requestAnimationFrame(() => this.reset());
     }
   }
 
-  onMouseLeave(e) {
-    this.transitions();
-    window.requestAnimationFrame(() => this.reset());
-
-    if (typeof this.settings.onMouseLeave === 'function') {
-      this.settings.onMouseLeave(this.element);
-    }
-  }
-
-  onDeviceMove(e) {
-    this.event = e;
-
+  onDeviceMove(event) {
+    this.movementEvent = event;
     this.update();
     this.updateElementPosition();
-    this.transitions();
-
-    if (typeof this.settings.onDeviceMove === 'function') {
-      this.settings.onDeviceMove(this.element);
-    }
   }
 
   reset() {
@@ -103,82 +109,102 @@ export default class UniversalTilt {
     };
 
     if (this.settings.reset) {
-      this.element.style.transform = `perspective(${
-        this.settings.perspective
-      }px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      this.element.style.transform = `perspective(${this.settings.perspective}px) rotateX(0deg) rotateY(0deg) scale(1)`;
     }
 
+    // set animation when is enabled
+    if (this.settings.animation) {
+      this.element.style.transition = 'all 500ms ease';
+    }
+
+    // reset shine effect
     if (this.settings.shine && !this.settings['shine-save']) {
-      Object.assign(this.shineElement.style, {
-        transform: 'rotate(180deg) translate3d(-50%, -50%, 0)',
-        opacity: '0'
-      });
+      this.shineElement.style.transition = 'all 500ms ease';
+      this.shineElement.style.transform = 'rotate(180deg) translate3d(-50%, -50%, 0)';
+      this.shineElement.style.opacity = '0';
+    }
+
+    // reset box shadow
+    if (this.settings.shadow && !this.settings['shadow-save']) {
+      this.element.style.boxShadow = '0 45px 100px rgba(0, 0, 0, 0)';
     }
   }
 
   getValues() {
-    let x, y;
+    var x;
+    var y;
 
-    if (this.isMobile()) {
-      x = this.event.accelerationIncludingGravity.x / 4;
-      y = this.event.accelerationIncludingGravity.y / 4;
+    // if is mobile device (touch screen + gyroscope)
+    if (window.DeviceMotionEvent && "ontouchstart" in document.documentElement) {
 
-      let stateX, stateY;
+      // revert axis (device rotation)
+      x = Math.round(event.accelerationIncludingGravity.x) / 6;
+      y = Math.round(event.accelerationIncludingGravity.y) / 6;
+
+      var stateX;
+      var stateY;
 
       if (window.orientation === 90) {
-        stateX = (1.0 + x) / 2;
-        stateY = (1.0 - y) / 2;
+        stateX = 1.0 + x;
+        stateY = 1.0 - y;
 
-        y = stateX;
-        x = stateY;
+        y = stateX / 2;
+        x = stateY / 2;
       } else if (window.orientation === -90) {
-        stateX = (1.0 - x) / 2;
-        stateY = (1.0 + y) / 2;
+        stateX = 1.0 - x;
+        stateY = 1.0 + y;
 
-        y = stateX;
-        x = stateY;
+        y = stateX / 2;
+        x = stateY / 2;
       } else if (window.orientation === 0) {
-        stateY = (1.0 + y) / 2;
-        stateX = (1.0 + x) / 2;
+        stateY = 1.0 + y;
+        stateX = 1.0 + x;
 
-        y = stateY;
-        x = stateX;
+        y = stateY / 2;
+        x = stateX / 2;
       } else if (window.orientation === 180) {
-        stateY = (1.0 - y) / 2;
-        stateX = (1.0 - x) / 2;
+        stateY = 1.0 - y;
+        stateX = 1.0 - x;
 
-        y = stateY;
-        x = stateX;
+        y = stateY / 2;
+        x = stateX / 2;
       }
+
+    // if desktop
     } else {
+
       // find element vertical & horizontal center
       if (this.settings['position-base'] === 'element') {
         x = (this.event.clientX - this.left) / this.width;
         y = (this.event.clientY - this.top) / this.height;
-      } else if (this.settings['position-base'] === 'window') {
-        x = this.event.clientX / window.innerWidth;
-        y = this.event.clientY / window.innerHeight;
+      } else {
+        x = (this.event.clientX) / window.innerWidth;
+        y = (this.event.clientY) / window.innerHeight;
       }
+
+      // set movement for axis
+      x = Math.min(Math.max(x, 0), 1);
+      y = Math.min(Math.max(y, 0), 1);
     }
 
-    // set movement for axis
-    x = Math.min(Math.max(x, 0), 1);
-    y = Math.min(Math.max(y, 0), 1);
+    var tiltX = ((this.settings.max / 2) - (x * this.settings.max)).toFixed(2);
+    var tiltY = ((y * this.settings.max) - (this.settings.max / 2)).toFixed(2);
 
-    const tiltX = (this.settings.max / 2 - x * this.settings.max).toFixed(2);
-    const tiltY = (y * this.settings.max - this.settings.max / 2).toFixed(2);
+    // set angle
+    var angle = Math.atan2(0.5 - x, y - 0.5) * (180 / Math.PI);
 
-    const angle = Math.atan2(x - 0.5, 0.5 - y) * (180 / Math.PI);
-
+    // return values
     return {
       tiltX: this.reverse * tiltX,
       tiltY: this.reverse * tiltY,
-      angle
+      percentageX: x * 100,
+      percentageY: y * 100,
+      angle: angle
     };
   }
 
   updateElementPosition() {
-    const rect = this.element.getBoundingClientRect();
+    let rect = this.element.getBoundingClientRect();
 
     this.width = this.element.offsetWidth;
     this.height = this.element.offsetHeight;
@@ -187,129 +213,107 @@ export default class UniversalTilt {
   }
 
   update() {
-    const values = this.getValues();
+    let values = this.getValues();
 
-    this.element.style.transform = `perspective(${this.settings.perspective}px)
-      rotateX(${
-        this.settings.disabled && this.settings.disabled.toUpperCase() === 'X'
-          ? 0
-          : values.tiltY
-      }deg)
-      rotateY(${
-        this.settings.disabled && this.settings.disabled.toUpperCase() === 'Y'
-          ? 0
-          : values.tiltX
-      }deg)
-      scale3d(${this.settings.scale}, ${this.settings.scale}, ${
-      this.settings.scale
-    })`;
-
-    if (this.settings.shine) {
-      Object.assign(this.shineElement.style, {
-        transform: `rotate(${values.angle}deg) translate3d(-50%, -50%, 0)`,
-        opacity: `${this.settings['shine-opacity']}`
-      });
+    if (this.settings.animation) {
+      this.element.style.transition = 'all 100ms ease';
     }
 
-    this.element.dispatchEvent(
-      new CustomEvent('tiltChange', {
-        detail: values
-      })
-    );
+    if (this.settings.shadow) {
+      this.boxShadow = '0 45px 100px rgba(0, 0, 0, 0.4)';
+    }
+
+    this.element.style.transform = `perspective(${this.settings.perspective}px)
+    rotateX(${this.settings.disabled === "X" || this.settings.disabled === "x" ? 0 : values.tiltY}deg)
+    rotateY(${this.settings.disabled === "Y" || this.settings.disabled === "y" ? 0 : values.tiltX}deg)
+    scale(${this.settings.scale})`;
+
+    if (this.settings.shine) {
+      this.shineElement.style.transition = 'all 0ms ease';
+      this.shineElement.style.transform = `rotate(${-values.angle}deg) translate3d(-50%, -50%, 0)`;
+      this.shineElement.style.opacity = `${this.settings["shine-opacity"]}`;
+    }
+
+    if (this.settings.shadow) {
+      this.element.style.boxShadow = this.boxShadow;
+    }
+
+    // tilt position change event
+    this.element.dispatchEvent(new CustomEvent("tiltChange", {
+      "detail": {
+        'X': values.tiltX,
+        'Y': values.tiltY
+      }
+    }));
   }
 
   shine() {
-    const shineOuter = document.createElement('div');
-    const shineInner = document.createElement('div');
+    const createShine = document.createElement("div");
+    createShine.classList.add("shine");
 
-    shineOuter.classList.add('shine');
-    shineInner.classList.add('shine-inner');
+    const createShineInner = document.createElement("div");
+    createShineInner.classList.add("shine-inner");
 
-    shineOuter.appendChild(shineInner);
-    this.element.appendChild(shineOuter);
+    createShine.appendChild(createShineInner);
+    this.element.appendChild(createShine);
 
-    this.shineWrapper = this.element.querySelector('.shine');
-    this.shineElement = this.element.querySelector('.shine-inner');
+    this.shineElementWrapper = this.element.querySelector(".shine");
+    this.shineElement = this.element.querySelector(".shine-inner");
 
-    Object.assign(this.shineWrapper.style, {
-      position: 'absolute',
-      top: '0',
-      left: '0',
-      height: '100%',
-      width: '100%',
-      overflow: 'hidden'
+    Object.assign(this.shineElementWrapper.style, {
+      'position': 'absolute',
+      'top': '0',
+      'left': '0',
+      'height': '100%',
+      'width': '100%',
+      'overflow': 'hidden'
     });
 
     // set style for shine element
     Object.assign(this.shineElement.style, {
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
+      'position': 'absolute',
+      'top': '50%',
+      'left': '50%',
       'pointer-events': 'none',
-      'background-image':
-        'linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)',
-      width: `${this.element.offsetWidth * 2}px`,
-      height: `${this.element.offsetWidth * 2}px`,
-      transform: 'rotate(180deg) translate3d(-50%, -50%, 0)',
+      'background-image': 'linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)',
+      'width': `${this.element.offsetWidth * 2}px`,
+      'height': `${this.element.offsetWidth * 2}px`,
+      'transform': 'rotate(180deg) translate3d(-50%, -50%, 0)',
       'transform-origin': '0% 0%',
-      opacity: '0'
+      'opacity': '0'
     });
   }
 
-  transitions() {
-    clearTimeout(this.timeout);
+  settings(settings) {
 
-    this.element.style.transition = `all ${this.settings.speed}ms ${
-      this.settings.easing
-    }`;
-
-    if (this.settings.shine) {
-      this.shineElement.style.transition = `opacity ${this.settings.speed}ms ${
-        this.settings.easing
-      }`;
+    // defaults
+    let defaults = {
+      'position-base': 'element', // element or window
+      reset: true,
+      shadow: false,
+      'shadow-save': false,
+      shine: false,
+      'shine-opacity': 0,
+      'shine-save': false,
+      max: 35,
+      perspective: 1000,
+      scale: 1.0,
+      disabled: null,
+      reverse: false,
+      animation: true
     }
 
-    this.timeout = setTimeout(() => {
-      this.element.style.transition = '';
-      if (this.settings.shine) this.shineElement.style.transition = '';
-    }, this.settings.speed);
-  }
+    let custom = {};
 
-  settings(settings) {
-    const defaults = {
-      'position-base': 'element', // element or window
-      reset: true, // enable/disable element position reset after mouseout
-      exclude: null, // enable/disable tilt effect on selected user agents
-
-      shine: false, // add/remove shine effect on mouseover
-      'shine-opacity': 0, // shine opacity (0-1) (shine value must be true)
-      'shine-save': false, // save/reset shine effect on mouseout (shine value must be true)
-
-      max: 35, // max tilt value
-      perspective: 1000, // tilt effect perspective
-      scale: 1.0, // element scale on mouseover
-      disabled: null, // disable axis (X or Y)
-      reverse: false, // reverse tilt effect directory
-
-      speed: 300, // transition speed
-      easing: 'cubic-bezier(.03, .98, .52, .99)', // transition easing
-
-      onMouseEnter: null, // callback on mouse enter
-      onMouseMove: null, // callback on mouse move
-      onMouseLeave: null, // callback on mouse leave
-      onDeviceMove: null // callback on device move
-    };
-
-    const custom = {};
-
-    for (const setting in defaults) {
+    // apply settings and get values from data-*
+    for (var setting in defaults) {
       if (setting in settings) {
         custom[setting] = settings[setting];
       } else if (this.element.getAttribute(`data-${setting}`)) {
-        const attribute = this.element.getAttribute(`data-${setting}`);
+        let attribute = this.element.getAttribute(`data-${setting}`);
         try {
           custom[setting] = JSON.parse(attribute);
-        } catch (err) {
+        } catch (e) {
           custom[setting] = attribute;
         }
       } else {
@@ -321,19 +325,13 @@ export default class UniversalTilt {
   }
 }
 
-if (typeof document !== 'undefined') {
-  new UniversalTilt(document.querySelectorAll('[tilt]'));
-}
+// jQuery
+if (window.jQuery) {
+  let $ = window.jQuery;
 
-let scope;
-
-if (typeof window !== 'undefined') scope = window;
-else if (typeof global !== 'undefined') scope = global;
-
-if (scope && scope.jQuery) {
-  const $ = scope.jQuery;
-
-  $.fn.universalTilt = function(options) {
-    new UniversalTilt(this, options);
-  };
+  $.fn.UniversalTilt = function(options) {
+    for (var element = 0; element < this.length; element++) {
+      new UniversalTilt(this[element], options);
+    }
+  }
 }
