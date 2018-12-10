@@ -2,29 +2,54 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="style2.css">
+  <link rel="stylesheet" type="text/css" href="fullpage.css" />
 </head>
 
 <body>
 
-  <div class="poster tilt center" data-scale="1.0" data-reset="true" data-shine="true" data-shine-opacity="0.5" data-shine-save="true" data-reverse="true" >
-    <img class="poster_image" src="./Images/Jobs.jpg">
-    <span class="poster_text center">
-      The<br>
-      Lives<br>
-      of Others
-    </span>
-    <span class="poster_text_shadow center">
-      The<br>
-      Lives<br>
-      of Others
-    </span>
-    <div class="poster_shadow center">
+  <div id="fullpage">
+    <div class="section">
+      <div class="poster tilt center" data-scale="1.0" data-reset="true" data-shine="true" data-shine-opacity="0.5" data-shine-save="true" data-reverse="true" data-position-base="window">
+        <img class="poster_image" src="./Images/Jobs.jpg">
+        <span class="poster_text center">
+          The<br>
+          Lives<br>
+          of Others
+        </span>
+        <span class="poster_text_shadow center">
+          The<br>
+          Lives<br>
+          of Others
+        </span>
+        <div class="poster_shadow center">
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="poster tilt center" data-scale="1.0" data-reset="true" data-shine="true" data-shine-opacity="0.5" data-shine-save="true" data-reverse="true" data-position-base="window">
+        <img class="poster_image" src="./Images/Jobs.jpg">
+        <span class="poster_text center">
+          The<br>
+          Lives<br>
+          of Others
+        </span>
+        <span class="poster_text_shadow center">
+          The<br>
+          Lives<br>
+          of Others
+        </span>
+        <div class="poster_shadow center">
+        </div>
+      </div>
     </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="./universal-tilt.js" type="text/javascript"></script>
   <script>$('.tilt').UniversalTilt()</script>
+
+  <script src="./fullpage.js" type="text/javascript"></script>
+  <script> $(document).ready(function() { $('#fullpage').fullpage(); });</script>
 
 </body>
 
