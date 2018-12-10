@@ -1,0 +1,91 @@
+
+@font-face {
+  font-family: Canela;
+  src: url('Fonts/Canela-Medium.otf');
+}
+
+html {
+  background-image: linear-gradient(to right, #FAFAFA, #F5F5F5);
+  -webkit-tap-highlight-color: #8C9EFF;
+}
+
+::selection {
+  color: blue;
+  background-color: #8C9EFF; /* WebKit/Blink Browsers */
+}
+
+.center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+
+  /*this to solve "the content will not be cut when the window is smaller than the content": */
+  max-width:100%;
+  max-height:100%;
+}
+
+.poster {
+  /* box-shadow: 50px 50px 30px rgba(0, 0, 0, 0.1); */
+  background: none;
+  height: 500px;
+  width: 400px;
+  transform-style: preserve-3d;
+  vertical-align: middle;
+}
+
+.poster:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent, white);
+  opacity: 0.5;
+}
+
+.poster_image{
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  -webkit-clip-path: polygon(0 0px, 400px 0px, 400px 500px, 0 500px);
+}
+
+.poster_text {
+  display: flex;
+  max-width: 100%;
+  background: none;
+  font-family: Canela;
+  transform: translateZ(50px);
+  position: absolute;
+  color: white;
+  font-size: 115pt;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.poster_shadow {
+  background: #536DFE; /* rgba(0, 0, 0, 0.5); */
+  opacity: 0.5;
+  z-index: -1;
+  transform: translateZ(-100px);
+  filter: blur(100px);
+}
+
+.poster_text_shadow {
+  opacity: 0.5;
+  display: flex;
+  max-width: 100%;
+  background: none;
+  font-family: Canela;
+  position: absolute;
+  color: #536DFE;
+  font-size: 115pt;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  transform: translateZ(-100px);
+  filter: blur(25px);
+}
