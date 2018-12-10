@@ -27,8 +27,8 @@ html {
 .poster {
   /* box-shadow: 50px 50px 30px rgba(0, 0, 0, 0.1); */
   background: none;
-  height: 500px;
-  width: 400px;
+  height: 400px;
+  width: 300px;
   transform-style: preserve-3d;
   vertical-align: middle;
 }
@@ -48,8 +48,8 @@ html {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0px;
-  -webkit-clip-path: polygon(0 0px, 400px 0px, 400px 500px, 0 500px);
+  margin-top: -50px;
+  -webkit-clip-path: polygon(0 50px, 300px 50px, 300px 450px, 0 450px);
 }
 
 .poster_text {
@@ -60,7 +60,7 @@ html {
   transform: translateZ(50px);
   position: absolute;
   color: white;
-  font-size: 125pt;
+  font-size: 130pt;
   justify-content: center;
   align-items: center;
   text-align: left;
@@ -71,7 +71,7 @@ html {
   opacity: 0.5;
   z-index: -1;
   transform: translateZ(-100px);
-  filter: blur(100px);
+  filter: blur(20px);
 }
 
 .poster_text_shadow {
@@ -82,10 +82,10 @@ html {
   font-family: Canela;
   position: absolute;
   color: #536DFE;
-  font-size: 125pt;
+  font-size: 130pt;
   justify-content: center;
   align-items: center;
   text-align: left;
   transform: translateZ(-100px);
-  filter: blur(25px);
+  filter: blur(30px);
 }
