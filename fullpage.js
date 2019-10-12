@@ -107,7 +107,7 @@
             menu: false,
             anchors:[],
             lockAnchors: false,
-            navigation: false,
+            navigation: true,
             navigationPosition: 'right',
             navigationTooltips: [],
             showActiveTooltip: false,
@@ -124,7 +124,7 @@
             fitToSectionDelay: 1000,
             easing: 'easeInOutCubic',
             easingcss3: 'ease',
-            loopBottom: false,
+            loopBottom: true,
             loopTop: false,
             loopHorizontal: true,
             continuousVertical: false,
@@ -2442,7 +2442,7 @@
                             previousHeight = currentHeight;
 
                             //issue #3336
-                            //when using Chrome we add a small timeout to get the right window height 
+                            //when using Chrome we add a small timeout to get the right window height
                             //https://stackoverflow.com/a/12556928/1081396
                             //https://stackoverflow.com/questions/13807810/ios-chrome-detection
                         }, navigator.userAgent.match('CriOS') ? 50 : 0);
