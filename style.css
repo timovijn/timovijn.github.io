@@ -4,6 +4,16 @@
   src: url('Fonts/Canela-Medium.otf');
 }
 
+@font-face {
+  font-family: NeueHaas;
+  src: url('Fonts/HaasGrotDisp-55Roman.otf');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  src: url('Fonts/Maison Neue Medium.otf');
+}
+
 html {
   background-image: linear-gradient(to right, #FAFAFA, #F5F5F5);
   -webkit-tap-highlight-color: #8C9EFF;
@@ -44,7 +54,7 @@ html {
   opacity: 0.5;
 }
 
-.poster_image{
+.poster_image {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -68,10 +78,11 @@ html {
 
 .poster_shadow {
   background: #536DFE; /* rgba(0, 0, 0, 0.5); */
-  opacity: 0.5;
+  opacity: 1;
   z-index: -1;
   transform: translateZ(-100px);
   filter: blur(100px);
+  border-radius: 50px;
 }
 
 .poster_text_shadow {
@@ -88,4 +99,31 @@ html {
   text-align: left;
   transform: translateZ(-100px);
   filter: blur(25px);
+}
+
+.header {
+  /* box-shadow: 50px 50px 30px rgba(0, 0, 0, 0.1); */
+  background: none;
+  height: 500px;
+  width: 400px;
+  transform-style: preserve-3d;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.header_image {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  -webkit-clip-path: polygon(0 0px, 400px 0px, 400px 500px, 0 500px);
+  border-radius: 50px;
+}
+
+.header_text {
+  font-family: MaisonNeue;
+  color: #9E9E9E;
+  font-size: 10pt;
+  transform: translateZ(50px);
+  padding-top: 20px;
 }
