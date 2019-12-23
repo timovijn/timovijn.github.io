@@ -6,12 +6,12 @@
 
 @font-face {
   font-family: NeueHaas;
-  src: url('Fonts/HaasGrotDisp-55Roman.otf');
+  src: url('Fonts/NeueHaas/HaasGrotDisp-55Roman.otf');
 }
 
 @font-face {
   font-family: MaisonNeue;
-  src: url('Fonts/Maison Neue Medium.otf');
+  src: url('Fonts/MaisonNeue/Maison Neue Medium.otf');
 }
 
 html {
