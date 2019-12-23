@@ -145,7 +145,6 @@ html {
 
 .bar_top {
     /* box-shadow: 50px 50px 30px rgba(0, 0, 0, 0.1); */
-    position: fixed;
     top: 0;
     width: 100%;
     height: 150px;
@@ -164,7 +163,7 @@ html {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 500px;
+  height: 60%;
   display: flex;
   background: red;
   background-image:
@@ -179,4 +178,14 @@ html {
   font-size: 15pt;
   justify-content: center;
   align-items: center;
+}
+
+.logo {
+  width: 35px;
+  opacity: 1.0;
+  transition: 1.0s;
+}
+
+.logo:hover {
+  opacity: 0.25;
 }
