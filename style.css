@@ -144,6 +144,22 @@ html {
   text-align: left;
 }
 
+.general_text {
+  display: flex;
+  max-width: 80%;
+  height: 25%;
+  background: none;
+  font-family: Canela;
+  transform: translateZ(50px);
+  position: absolute;
+  color: #212121;
+  font-size: 25pt;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+}
+
 .bar_top {
     /* box-shadow: 50px 50px 30px rgba(0, 0, 0, 0.1); */
     top: 0;
