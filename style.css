@@ -132,6 +132,7 @@ html {
 .welcome_text {
   display: flex;
   max-width: 100%;
+  height: 25%;
   background: none;
   font-family: Canela;
   transform: translateZ(50px);
@@ -151,12 +152,20 @@ html {
     display: flex;
     background: none;
     font-family: Canela;
-    transform: translateZ(50px);
     position: absolute;
     color: #212121;
     font-size: 15pt;
     justify-content: center;
     align-items: center;
+}
+
+.bar_top_text {
+    opacity: 0.25;
+    transition: 1.0s;
+}
+
+.bar_top_text:hover {
+    opacity: 1.0;
 }
 
 .bar_bottom {
@@ -181,11 +190,11 @@ html {
 }
 
 .logo {
-  width: 35px;
-  opacity: 1.0;
+  width: 2.5%;
+  opacity: 0.25;
   transition: 1.0s;
 }
 
 .logo:hover {
-  opacity: 0.25;
+  opacity: 1.0;
 }
