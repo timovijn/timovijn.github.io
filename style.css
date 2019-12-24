@@ -240,7 +240,7 @@ html {
     font-family: Canela;
     font-size: 15pt;
     color: #212121;
-    opacity: 0.25;
+    opacity: $proximity/500;
     transition: 1.0s;
     text-align: right;
     right: 10%;
@@ -284,7 +284,7 @@ html {
   left: 10%;
   width: 25pt;
   transition: 1.0s;
-  opacity: 0.25;
+  opacity: 1.0;
 }
 
 .logo:hover {
