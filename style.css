@@ -378,7 +378,6 @@ a:hover {
   text-align: center;
   line-height: 1.5;
   align-items: center;
-  opacity: 0.04;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -386,6 +385,7 @@ a:hover {
   -o-user-select: none;
   user-select: none;
   cursor: default;
+  transition: 1.0s;
 }
 
 .Box1 {
@@ -398,7 +398,14 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  transition: 2.0s;
+  opacity: 0;
 }
+
+.Box1:hover {
+  opacity: 0.1;
+}
+
 .Box2 {
   position: absolute;
   top: 25%;
@@ -409,7 +416,14 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  transition: 2.0s;
+  opacity: 0;
 }
+
+.Box2:hover {
+  opacity: 0.1;
+}
+
 .Box3 {
   position: absolute;
   top: 50%;
@@ -420,7 +434,14 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  transition: 2.0s;
+  opacity: 0;
 }
+
+.Box3:hover {
+  opacity: 0.1;
+}
+
 .Box4 {
   position: absolute;
   top: 75%;
@@ -431,4 +452,10 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  transition: 2.0s;
+  opacity: 0;
+}
+
+.Box4:hover {
+  opacity: 0.1;
 }
