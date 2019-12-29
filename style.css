@@ -14,6 +14,13 @@
   src: url('Fonts/MaisonNeue/Maison Neue Medium.otf');
 }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* By using the box-sizing property in your style sheet, you will tell the browser to include padding's as part of the total width. */
+
 html {
   background-color: #FFF7F2
   /* background-image: linear-gradient(to right, #FAFAFA, #F5F5F5);
@@ -183,7 +190,7 @@ html {
   background: none;
   font-family: Canela;
   color: #212121;
-  font-size: 20pt;
+  font-size: 18pt;
   position: absolute;
   text-align: center;
   line-height: 1.5;
@@ -202,32 +209,32 @@ html {
 }
 
 .center_item {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  justify-content: center;
+  align-items: center;
 }
 
 .bar_top_container {
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 15%;
-    display: block;
-    background: none;
-    position: absolute;
-    border-style: none;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 15%;
+  display: block;
+  background: none;
+  position: absolute;
+  border-style: none;
 }
 
 .fixed_container {
-    top: 0;
-    width: 100%;
-    height: 150px;
-    display: block;
-    background: none;
-    position: absolute;
+  top: 0;
+  width: 100%;
+  height: 150px;
+  display: block;
+  background: none;
+  position: absolute;
 }
 
 .articles_container {
@@ -237,17 +244,17 @@ html {
 }
 
 .bar_top_text {
-    font-family: Canela;
-    font-size: 15pt;
-    color: #212121;
-    opacity: $proximity/500;
-    transition: 1.0s;
-    text-align: right;
-    right: 10%;
+  font-family: Canela;
+  font-size: 15pt;
+  color: #212121;
+  opacity: $proximity/500;
+  transition: 1.0s;
+  text-align: right;
+  right: 10%;
 }
 
 .bar_top_text:hover {
-    opacity: 1.0;
+  opacity: 1.0;
 }
 
 .bar_bottom {
@@ -258,8 +265,8 @@ html {
   display: flex;
   background: none;
   background-image:
-    linear-gradient(to bottom, rgba(255, 247, 242, 1.00), rgba(255, 247, 242, 0.00)),
-    url(./Images/Desert.jpg);
+  linear-gradient(to bottom, rgba(255, 247, 242, 1.00), rgba(255, 247, 242, 0.00)),
+  url(./Images/Desert.jpg);
   background-position: bottom right;
   background-size: cover;
   font-family: Canela;
@@ -269,6 +276,31 @@ html {
   font-size: 15pt;
   justify-content: center;
   align-items: center;
+}
+
+.footer_container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  background: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer_text {
+  max-width: 80%;
+  margin: auto;
+  background: none;
+  font-family: Canela;
+  color: #FFF7F2;
+  font-size: 10pt;
+  position: absolute;
+  text-align: center;
+  line-height: 1.5;
+  align-items: center;
+  opacity: 0.5;
 }
 
 .logo_container {
@@ -290,6 +322,7 @@ html {
 .logo:hover {
   opacity: 1.0;
   color: red;
+  fill: red;
 }
 
 a {
