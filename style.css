@@ -335,6 +335,14 @@ a:hover {
   color: #DF8159;
 }
 
+.Welcome0 {
+  display: none;
+}
+
+.Welcome0.show {
+  display: block;
+}
+
 .Welcome1 {
   display: none;
 }
@@ -390,7 +398,7 @@ a:hover {
 
 .Box1 {
   position: absolute;
-  top: 75%;
+  top: 15%;
   width: 20%;
   height: 25%;
   left: 10%;
@@ -409,7 +417,7 @@ a:hover {
 
 .Box2 {
   position: absolute;
-  top: 75%;
+  top: 15%;
   width: 20%;
   height: 25%;
   left: 30%;
@@ -428,7 +436,7 @@ a:hover {
 
 .Box3 {
   position: absolute;
-  top: 75%;
+  top: 15%;
   width: 20%;
   height: 25%;
   left: 50%;
@@ -447,7 +455,7 @@ a:hover {
 
 .Box4 {
   position: absolute;
-  top: 75%;
+  top: 15%;
   width: 20%;
   height: 25%;
   left: 70%;

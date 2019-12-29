@@ -39,6 +39,9 @@
         </div>
       </div>
       <div class="middle_container">
+        <div class="welcome_text center_item Welcome0" style="font-size: 60pt;">
+          This is Quantodian
+        </div>
         <div class="welcome_text center_item Welcome1">
           We are a pioneer in building rule-based investment strategies that we trade ourselves. We focus on high-conviction value and momentum factor exposures, and make only a handful of trades per year or less to reach our objectives.
         </div>
@@ -261,45 +264,54 @@ of Others
   var $btn3 = $('.Box3');
   var $btn4 = $('.Box4');
 
-  var $tt1 = $('.Welcome1');
-  var $tt2 = $('.Welcome2');
-  var $tt3 = $('.Welcome3');
-  var $tt4 = $('.Welcome4');
+  var $welc0 = $('.Welcome0');
+  var $welc1 = $('.Welcome1');
+  var $welc2 = $('.Welcome2');
+  var $welc3 = $('.Welcome3');
+  var $welc4 = $('.Welcome4');
 
   function showWelcome1() {
-    $tt1.addClass('show');
+    $welc1.addClass('show');
+    $welc0.removeClass('show');
   }
 
   function hideWelcome1() {
-    $tt1.removeClass('show');
+    $welc1.removeClass('show');
+    $welc0.addClass('show');
   }
 
   function showWelcome2() {
-    $tt2.addClass('show');
+    $welc2.addClass('show');
+    $welc0.removeClass('show');
   }
 
   function hideWelcome2() {
-    $tt2.removeClass('show');
+    $welc2.removeClass('show');
+    $welc0.addClass('show');
   }
 
   function showWelcome3() {
-    $tt3.addClass('show');
+    $welc3.addClass('show');
+    $welc0.removeClass('show');
   }
 
   function hideWelcome3() {
-    $tt3.removeClass('show');
+    $welc3.removeClass('show');
+    $welc0.addClass('show');
   }
 
   function showWelcome4() {
-    $tt4.addClass('show');
+    $welc4.addClass('show');
+    $welc0.removeClass('show');
   }
 
   function hideWelcome4() {
-    $tt4.removeClass('show');
+    $welc4.removeClass('show');
+    $welc0.addClass('show');
   }
 
   // function hideWelcome1() {
-  // 	$tt1.removeClass('show');
+  // 	$welc1.removeClass('show');
   // }
 
   $btn1.hover(showWelcome1,hideWelcome1);
