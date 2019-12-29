@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="fullpage.css" />
 </head>
 
-<body>
+<body class="select_disable">
   <div class="logo_container">
     <img class="logo center_item" src="./Images/Logo.svg">
   </div>
@@ -38,7 +38,7 @@
           Quantodian
         </div>
         <div class="welcome_text center_item Welcome1">
-          We are a pioneer in building rule-based investment strategies that we trade ourselves. We focus on high-conviction value and momentum factor exposures, and make only a handful of trades per year or less to reach our objectives.
+          We are a pioneer in building rule-based investment strategies. We focus on high-conviction value and momentum factor exposures, and make only a handful of trades per year or less to reach our objectives.
         </div>
         <div class="welcome_text center_item Welcome2">
           We allow investors to gain a good understanding of what is inside our boxes through the materials that we publish. We invite you to participate via * Free articles describing our signals and strategies. * Free delayed signals. * Paid realtime signals.
@@ -128,7 +128,7 @@
         </div>
         <div class="general_container">
           <div class="general_text center_item">
-            <p> Quantodian could be your toolbelt through what we like to call the trading desert, where we find: </p>
+            <p> Let us help you through what we like to call the "trading desert", where we find: </p>
             <p> Roughness; difficult to understand or to find truths.
               <br> Loneliness; each man for himself and the internal fights that he has to withstand.
             <br> Insanity; dangers of losing faith or of becoming irrational/delusional. </p>
@@ -267,32 +267,32 @@ of Others
 
   function showWelcome1() {
     $welc1.addClass('show');
-    $welc0.removeClass('show');
+    $welc0.addClass('hide');
   }
 
   function hideWelcome1() {
     $welc1.removeClass('show');
-    $welc0.addClass('show');
+    $welc0.removeClass('hide');
   }
 
   function showWelcome2() {
     $welc2.addClass('show');
-    $welc0.removeClass('show');
+    $welc0.addClass('hide');
   }
 
   function hideWelcome2() {
     $welc2.removeClass('show');
-    $welc0.addClass('show');
+    $welc0.removeClass('hide');
   }
 
   function showWelcome3() {
     $welc3.addClass('show');
-    $welc0.removeClass('show');
+    $welc0.addClass('hide');
   }
 
   function hideWelcome3() {
     $welc3.removeClass('show');
-    $welc0.addClass('show');
+    $welc0.removeClass('hide');
   }
 
   // function hideWelcome1() {
