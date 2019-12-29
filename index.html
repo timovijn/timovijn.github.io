@@ -20,39 +20,36 @@
       </div>
       <div class="Box1">
         <div class="box_text center_item">
-          What we do
+          What
         </div>
       </div>
       <div class="Box2">
         <div class="box_text center_item">
-          Who we are
+          Why
         </div>
       </div>
       <div class="Box3">
         <div class="box_text center_item">
-          What we stand for
-        </div>
-      </div>
-      <div class="Box4">
-        <div class="box_text center_item">
-          What we offer you
+          Who
         </div>
       </div>
       <div class="middle_container">
-        <div class="welcome_text center_item Welcome0" style="font-size: 60pt;">
-          This is Quantodian
+        <div class="welcome_text center_item Welcome0" style="font-size: 100pt;">
+          Quantodian
         </div>
         <div class="welcome_text center_item Welcome1">
           We are a pioneer in building rule-based investment strategies that we trade ourselves. We focus on high-conviction value and momentum factor exposures, and make only a handful of trades per year or less to reach our objectives.
         </div>
         <div class="welcome_text center_item Welcome2">
-          We are PhD's with scientific and technical backgrounds, learned best practice from professional traders and applied that in our models. We have figured out several computerized ways to obtain and to maintain our edge in trading.
+          We allow investors to gain a good understanding of what is inside our boxes through the materials that we publish. We invite you to participate via * Free articles describing our signals and strategies. * Free delayed signals. * Paid realtime signals.
         </div>
         <div class="welcome_text center_item Welcome3">
-          1) Transparency, 2) Evidence-based Investing, 3) Rule-based decision making, 4) Adaptive models and 5) Win-win client relationships.
+          We are PhD's with scientific and technical backgrounds, learned best practice from professional traders and applied that in our models. We have figured out several computerized ways to obtain and to maintain our edge in trading.
         </div>
-        <div class="welcome_text center_item Welcome4">
-          We allow investors to gain a good understanding of what is inside our boxes through the materials that we publish. We invite you to participate via * Free articles describing our signals and strategies. * Free delayed signals. * Paid realtime signals.
+      </div>
+      <div class="Box4">
+        <div class="box_text center_item">
+          Scroll down
         </div>
       </div>
     </div>
@@ -262,13 +259,11 @@ of Others
   var $btn1 = $('.Box1');
   var $btn2 = $('.Box2');
   var $btn3 = $('.Box3');
-  var $btn4 = $('.Box4');
 
   var $welc0 = $('.Welcome0');
   var $welc1 = $('.Welcome1');
   var $welc2 = $('.Welcome2');
   var $welc3 = $('.Welcome3');
-  var $welc4 = $('.Welcome4');
 
   function showWelcome1() {
     $welc1.addClass('show');
@@ -300,16 +295,6 @@ of Others
     $welc0.addClass('show');
   }
 
-  function showWelcome4() {
-    $welc4.addClass('show');
-    $welc0.removeClass('show');
-  }
-
-  function hideWelcome4() {
-    $welc4.removeClass('show');
-    $welc0.addClass('show');
-  }
-
   // function hideWelcome1() {
   // 	$welc1.removeClass('show');
   // }
@@ -317,7 +302,6 @@ of Others
   $btn1.hover(showWelcome1,hideWelcome1);
   $btn2.hover(showWelcome2,hideWelcome2);
   $btn3.hover(showWelcome3,hideWelcome3);
-  $btn4.hover(showWelcome4,hideWelcome4);
 
 })();
 </script>
