@@ -1,6 +1,12 @@
 
 @font-face {
   font-family: Canela;
+  src: url('Fonts/Canela/Canela-Regular.otf');
+}
+
+@font-face {
+  font-family: Canela;
+  font-weight: bold;
   src: url('Fonts/Canela/Canela-Medium.otf');
 }
 
@@ -12,6 +18,10 @@
 @font-face {
   font-family: MaisonNeue;
   src: url('Fonts/MaisonNeue/Maison Neue Medium.otf');
+}
+
+:root {
+    --welcome-transition: 0.5s;
 }
 
 * {
@@ -246,6 +256,7 @@ html {
 
 .bar_top_text {
   font-family: Canela;
+  font-weight: bold;
   font-size: 15pt;
   color: #212121;
   opacity: $proximity/500;
@@ -346,7 +357,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  transition: 1.0s;
+  transition: var(--welcome-transition);
   opacity: 0;
   }
 
@@ -365,7 +376,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  transition: 1.0s;
+  transition: var(--welcome-transition);
   opacity: 0;
 }
 
@@ -384,7 +395,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  transition: 1.0s;
+  transition: var(--welcome-transition);
   opacity: 0;
 }
 
@@ -403,7 +414,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  transition: 1.0s;
+  transition: var(--welcome-transition);
   opacity: 0;
 }
 
@@ -416,6 +427,7 @@ a:hover {
   margin: auto;
   background: none;
   font-family: Canela;
+  font-weight: bold;
   color: #212121;
   font-size: 15pt;
   position: absolute;
