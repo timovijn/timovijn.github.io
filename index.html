@@ -268,40 +268,44 @@ of Others
 
   function showWelcome1() {
     $tt1.addClass('show');
-    $tt2.removeClass('show');
-    $tt3.removeClass('show');
-    $tt4.removeClass('show');
+  }
+
+  function hideWelcome1() {
+    $tt1.removeClass('show');
   }
 
   function showWelcome2() {
-    $tt1.removeClass('show');
     $tt2.addClass('show');
-    $tt3.removeClass('show');
-    $tt4.removeClass('show');
+  }
+
+  function hideWelcome2() {
+    $tt2.removeClass('show');
   }
 
   function showWelcome3() {
-    $tt1.removeClass('show');
-    $tt2.removeClass('show');
     $tt3.addClass('show');
-    $tt4.removeClass('show');
+  }
+
+  function hideWelcome3() {
+    $tt3.removeClass('show');
   }
 
   function showWelcome4() {
-    $tt1.removeClass('show');
-    $tt2.removeClass('show');
-    $tt3.removeClass('show');
     $tt4.addClass('show');
+  }
+
+  function hideWelcome4() {
+    $tt4.removeClass('show');
   }
 
   // function hideWelcome1() {
   // 	$tt1.removeClass('show');
   // }
 
-  $btn1.hover(showWelcome1);
-  $btn2.hover(showWelcome2);
-  $btn3.hover(showWelcome3);
-  $btn4.hover(showWelcome4);
+  $btn1.hover(showWelcome1,hideWelcome1);
+  $btn2.hover(showWelcome2,hideWelcome2);
+  $btn3.hover(showWelcome3,hideWelcome3);
+  $btn4.hover(showWelcome4,hideWelcome4);
 
 })();
 </script>
