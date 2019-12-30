@@ -1,13 +1,13 @@
 
 @font-face {
   font-family: Canela;
-  src: url('Fonts/Canela/Canela-Regular.otf');
+  src: url('Fonts/CormorantGaramond/CormorantGaramond-Medium.ttf');
 }
 
 @font-face {
   font-family: Canela;
   font-weight: bold;
-  src: url('Fonts/Canela/Canela-Medium.otf');
+  src: url('Fonts/CormorantGaramond/CormorantGaramond-Bold.ttf');
 }
 
 @font-face {
