@@ -9,6 +9,8 @@
   <div class="logo_container">
     <img class="logo center_item" src="./Images/Logo.svg">
   </div>
+  <div class="Darkmenu">
+  </div>
 
   <div id="fullpage">
 
@@ -259,6 +261,7 @@ of Others
   var $btn1 = $('.Box1');
   var $btn2 = $('.Box2');
   var $btn3 = $('.Box3');
+  var $darkmenu = $('.Darkmenu');
 
   var $welc0 = $('.Welcome0');
   var $welc1 = $('.Welcome1');
@@ -295,6 +298,14 @@ of Others
     $welc0.removeClass('hide');
   }
 
+  function showDarkmenu() {
+    $('.Darkmenu').addClass('show');
+  }
+
+  function hideDarkmenu() {
+    $('.Darkmenu').removeClass('show');
+  }
+
   // function hideWelcome1() {
   // 	$welc1.removeClass('show');
   // }
@@ -302,6 +313,7 @@ of Others
   $btn1.hover(showWelcome1,hideWelcome1);
   $btn2.hover(showWelcome2,hideWelcome2);
   $btn3.hover(showWelcome3,hideWelcome3);
+  $('.bar_top_container').hover(showDarkmenu,hideDarkmenu);
 
 })();
 </script>

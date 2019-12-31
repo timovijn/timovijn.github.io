@@ -293,7 +293,7 @@ html {
   background-position: bottom right;
   background-size: cover;
   font-family: Canela;
-  transform: translateZ(-1px);
+  z-index: -1;
   position: absolute;
   color: #212121;
   font-size: 15pt;
@@ -367,7 +367,6 @@ a:hover {
   background: none;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   transition: var(--welcome-transition);
   opacity: 1;
   }
@@ -386,7 +385,6 @@ a:hover {
   background: none;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   transition: var(--welcome-transition);
   opacity: 0;
 }
@@ -405,7 +403,6 @@ a:hover {
   background: none;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   transition: var(--welcome-transition);
   opacity: 0;
 }
@@ -424,7 +421,6 @@ a:hover {
   background: none;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   transition: var(--welcome-transition);
   opacity: 0;
 }
@@ -458,9 +454,8 @@ a:hover {
   background: none;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   transition: 1.0s;
-  opacity: 0.1;
+  opacity: 0.2;
 }
 
 .Box1:hover {
@@ -477,9 +472,8 @@ a:hover {
   background: none;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   transition: 1.0s;
-  opacity: 0.1;
+  opacity: 0.2;
 }
 
 .Box2:hover {
@@ -496,9 +490,8 @@ a:hover {
   background: none;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   transition: 1.0s;
-  opacity: 0.1;
+  opacity: 0.2;
 }
 
 .Box3:hover {
@@ -515,7 +508,22 @@ a:hover {
   background: none;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   transition: 1.0s;
-  opacity: 0.1;
+  opacity: 0.2;
+}
+
+.Darkmenu {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  border-style: none;
+  background: #212121;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.Darkmenu.show {
+  opacity: 1;
 }
