@@ -522,8 +522,19 @@ a:hover {
   background: #212121;
   opacity: 0;
   transition: 0.5s;
+  z-index: 99;
 }
 
 .Darkmenu.show {
   opacity: 1;
+}
+
+.Darkmenu_toggle {
+  top: 0;
+  left: 0;
+  height: 15%;
+  width: 50%;
+  position: fixed;
+  border-style: none;
+  z-index: 100;
 }
