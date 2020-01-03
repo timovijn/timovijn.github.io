@@ -186,7 +186,7 @@ html {
   font-size: 20pt;
   text-align: center;
   line-height: 1.1;
-  select_disable
+  border-style: solid;
 }
 
 .article_text {
