@@ -21,8 +21,8 @@
 }
 
 :root {
-    --welcome-transition: 0.5s;
-    --border: none;
+  --welcome-transition: 0.5s;
+  --border: none;
 }
 
 .select_disable {
@@ -41,6 +41,11 @@
   box-sizing: border-box;
 }
 /* By using the box-sizing property in your style sheet, you will tell the browser to include padding's as part of the total width. */
+
+body {
+  font-family: Canela;
+  font-size: 12pt;
+}
 
 html {
   background-color: #FFF7F2
@@ -188,11 +193,10 @@ html {
   max-width: 70%;
   margin: auto;
   background: none;
-  font-family: Canela;
   color: #212121;
-  font-size: 20pt;
+  font-size: 18pt;
   text-align: center;
-  line-height: 1.1;
+  line-height: 1.4;
   border-style: none;
 }
 
@@ -200,12 +204,11 @@ html {
   max-width: 60%;
   margin: auto;
   background: none;
-  font-family: Canela;
   color: #212121;
   font-size: 20pt;
   position: absolute;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .general_container {
@@ -214,22 +217,20 @@ html {
 }
 
 .general_text {
-  max-width: 80%;
+  max-width: 70%;
   margin: auto;
   background: none;
-  font-family: Canela;
   color: #212121;
-  font-size: 20pt;
+  font-size: 16pt;
   position: absolute;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .articles_text {
   max-width: 80%;
   margin: auto;
   background: none;
-  font-family: Canela;
   color: #212121;
   font-size: 20pt;
   position: absolute;
@@ -285,9 +286,8 @@ html {
 }
 
 .bar_top_text {
-  font-family: Canela;
   font-weight: bold;
-  font-size: 15pt;
+  font-size: 14pt;
   color: #212121;
   opacity: $proximity/500;
   transition: 1.0s;
@@ -296,7 +296,6 @@ html {
 }
 
 .bar_top_text_darkmenu {
-  font-family: Canela;
   font-weight: bold;
   font-size: 15pt;
   color: #FFF7F2;
@@ -322,7 +321,6 @@ html {
   url(./Images/Desert.jpg);
   background-position: bottom right;
   background-size: cover;
-  font-family: Canela;
   z-index: -1;
   position: absolute;
   color: #212121;
@@ -346,7 +344,6 @@ html {
   max-width: 80%;
   margin: auto;
   background: none;
-  font-family: Canela;
   color: #FFF7F2;
   font-size: 10pt;
   position: absolute;
@@ -410,7 +407,7 @@ a:hover {
   transition: var(--welcome-transition);
   opacity: 1;
   border-style: var(--border);
-  }
+}
 
 .Welcome0.hide {
   opacity: 0.0;
@@ -475,10 +472,9 @@ a:hover {
   max-width: 80%;
   margin: auto;
   background: none;
-  font-family: Canela;
   font-weight: bold;
   color: #212121;
-  font-size: 15pt;
+  font-size: 14pt;
   position: absolute;
   text-align: center;
   line-height: 1.5;
