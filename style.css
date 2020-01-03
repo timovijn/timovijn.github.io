@@ -22,6 +22,7 @@
 
 :root {
     --welcome-transition: 0.5s;
+    --border: none;
 }
 
 .select_disable {
@@ -157,8 +158,14 @@ html {
 }
 
 .middle_container {
+  top: 15%;
+  right: 0;
   width: 100%;
-  height: 50%;
+  height: 70%;
+  display: block;
+  background: none;
+  position: absolute;
+  border-style: var(--border);
 }
 
 .middle_top_container {
@@ -186,7 +193,7 @@ html {
   font-size: 20pt;
   text-align: center;
   line-height: 1.1;
-  border-style: solid;
+  border-style: none;
 }
 
 .article_text {
@@ -247,7 +254,7 @@ html {
   display: block;
   background: none;
   position: absolute;
-  border-style: none;
+  border-style: var(--border);
 }
 
 .bar_top_container_darkmenu {
@@ -258,7 +265,7 @@ html {
   display: block;
   background: none;
   position: absolute;
-  border-style: none;
+  border-style: var(--border);
 }
 
 .fixed_container {
@@ -268,6 +275,7 @@ html {
   display: block;
   background: none;
   position: absolute;
+  border-style: var(--border);
 }
 
 .articles_container {
@@ -389,6 +397,7 @@ a:hover {
 }
 
 .Welcome0 {
+  font-size: 90pt;
   position: absolute;
   top: 50%;
   width: 100%;
@@ -400,6 +409,7 @@ a:hover {
   justify-content: center;
   transition: var(--welcome-transition);
   opacity: 1;
+  border-style: var(--border);
   }
 
 .Welcome0.hide {
@@ -418,6 +428,7 @@ a:hover {
   justify-content: center;
   transition: var(--welcome-transition);
   opacity: 0;
+  border-style: var(--border);
 }
 
 .Welcome1.show {
@@ -487,6 +498,7 @@ a:hover {
   justify-content: center;
   transition: 1.0s;
   opacity: 0.2;
+  z-index: 1;
 }
 
 .Box1:hover {
@@ -505,6 +517,7 @@ a:hover {
   justify-content: center;
   transition: 1.0s;
   opacity: 0.2;
+  z-index: 1;
 }
 
 .Box2:hover {
@@ -523,6 +536,7 @@ a:hover {
   justify-content: center;
   transition: 1.0s;
   opacity: 0.2;
+  z-index: 1;
 }
 
 .Box3:hover {
@@ -532,15 +546,16 @@ a:hover {
 .Box4 {
   position: absolute;
   bottom: 10%;
-  width: 10%;
+  width: 50%;
   height: 25%;
-  left: 45%;
+  left: 25%;
   display: flex;
   background: none;
   align-items: center;
   justify-content: center;
   transition: 1.0s;
-  opacity: 0.2;
+  opacity: 1;
+  z-index: 1;
 }
 
 .Darkmenu {
@@ -579,4 +594,24 @@ a:hover {
   position: fixed;
   border-style: none;
   z-index: 100;
+}
+
+.title {
+  font-size: 80pt;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 40%;
+}
+
+.subtitle {
+  font-size: 25pt;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 65%;
 }
