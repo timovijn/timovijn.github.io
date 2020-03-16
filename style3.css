@@ -25,7 +25,7 @@
   --border: none;
 }
 
-.select_disable {
+.select-disable {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
