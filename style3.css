@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: NeueHaas;
-  src: url('Fonts/NeueHaas/HaasGrotDisp-55Roman.otf');
+  src: url('Fonts/NeueHaas/HaasGrotDisp-45Light.otf');
 }
 
 @font-face {
@@ -45,11 +45,11 @@
 body {
   font-family: Canela;
   font-size: 12pt;
+  overflow-x: hidden;
 }
 
 html {
   background-color: #FFF7F2
-  scroll-behavior: smooth;
   /* background-image: linear-gradient(to right, #FAFAFA, #F5F5F5);
   -webkit-tap-highlight-color: #8C9EFF; */
 }
@@ -69,8 +69,14 @@ html {
   max-height:100%;
 }
 
-.title {
+.page {
   font-size: 50pt;
+  height: 20%;
+  width: 100%;
+  position: relative;
+}
+
+.text {
   text-align: center;
   position:absolute;
   top: 0; bottom: 0; left: 0; right: 0;
@@ -78,8 +84,17 @@ html {
   height: 0px; /*requires explicit height*/
 }
 
-.first {
-  height: 100vh;
-  width: 100vw;
-  position: relative;
+.text-2 {
+  font-size: 80pt;
+}
+
+.text-3 {
+  font-size: 200pt;
+}
+
+.text-4 {
+  font-size: 18pt;
+  width: 50%;
+  font-family: NeueHaas;
+  line-height: 200%;
 }
