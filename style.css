@@ -22,7 +22,7 @@
 
 :root {
   --welcome-transition: 0.5s;
-  --border: none;
+  --border: solid;
 }
 
 .select_disable {
