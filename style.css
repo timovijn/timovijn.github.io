@@ -55,6 +55,10 @@ html {
   -webkit-tap-highlight-color: #8C9EFF; */
 }
 
+::-webkit-scrollbar {
+display: none;
+}
+
 ::selection {
   color: #FFF7F2;
   background-color: #DF8159; /* WebKit/Blink Browsers */
