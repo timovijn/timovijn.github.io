@@ -323,11 +323,11 @@ textarea {
   src: url('Fonts/MaisonNeue/Maison Neue Medium.otf');
 }
 
-html {
-  color: #222;
+/* html {
+  color: #212121;
   font-family: Canela;
   line-height: 1.5
-}
+} */
 
 @media (max-width: 699px) {
   html {
