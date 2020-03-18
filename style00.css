@@ -18,16 +18,16 @@
 
 .c-header_title {
   position: relative;
-  height: 200pt;
+  height: auto;
   width: 100%;
   top: calc(50%);
   perspective: 600px;
   -webkit-perspective: 600px;
   text-align: center;
-  border-style: solid;
+  border-style: dotted;
 }
 
-.text {
+.vertical-center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,8 +44,8 @@
 
 .o-h2,h1 {
   line-height: 1;
-  text-transform: none;
   font-size: 50pt;
+  overflow-wrap: normal;
 }
 
 .o-h3,h1 {
