@@ -31,6 +31,18 @@ div {
   background: none !important;
 }
 
+/* ::-moz-selection {
+  background-color: transparent;
+  color: #DF8159 !important;
+  text-shadow: none
+}
+
+::selection {
+  background-color: transparent;
+  color: #DF8159;
+  text-shadow: none
+} */
+
 @font-face {
   font-family: Canela;
   src: url('Fonts/Canela/Canela-Regular.otf');
