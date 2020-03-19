@@ -131,17 +131,16 @@ html {
 
 .logo_container {
   position: fixed;
-  height: 10%;
-  width: 10%;
-  top: 2%;
-  left: 45%;
+  height: 40px;
+  width: 40px;
+  top: 40px;
+  left: 40px;
   border: var(--border-2);
 }
 
 .logo {
   position: relative;
-  top: 25%;
-  height: 50%;
+  height: 100%;
   width: auto;
   opacity: 1.0;
   transition: 0.5s;
