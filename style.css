@@ -13,6 +13,12 @@ html {
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+html {
+  background-color: #FFF7F2;
+  /* background-image: linear-gradient(to right, #FAFAFA, #F5F5F5);
+  -webkit-tap-highlight-color: #8C9EFF; */
+}
+
 body {
   -webkit-user-select: none;
   -moz-user-select: -moz-none;
@@ -23,6 +29,40 @@ body {
 
 div {
   background: none !important;
+}
+
+@font-face {
+  font-family: Canela;
+  src: url('Fonts/Canela/Canela-Regular.otf');
+}
+
+@font-face {
+  font-family: Canela;
+  font-weight: bold;
+  src: url('Fonts/Canela/Canela-Medium.otf');
+}
+
+@font-face {
+  font-family: NeueHaas;
+  font-weight: 300;
+  src: url('Fonts/NeueHaas/HaasGrotDisp-45Light.otf');
+}
+
+@font-face {
+  font-family: NeueHaas;
+  font-weight: 400;
+  src: url('Fonts/NeueHaas/HaasGrotDisp-55Roman.otf');
+}
+
+@font-face {
+  font-family: NeueHaas;
+  font-weight: 500;
+  src: url('Fonts/NeueHaas/HaasGrotDisp-65Medium.otf');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  src: url('Fonts/MaisonNeue/Maison Neue Medium.otf');
 }
 
 .o-container {
@@ -43,7 +83,7 @@ div {
 }
 
 .c-header_title {
-  position: relative;
+  position: absolute;
   height: auto;
   width: 100%;
   top: 50%;
@@ -51,6 +91,18 @@ div {
   -webkit-perspective: 600px;
   text-align: center;
   border: var(--border-3);
+}
+
+.c-header_title.left {
+  width: 20%;
+  right: 60%;
+  text-align: right;
+}
+
+.c-header_title.right {
+  width: 40%;
+  left: 40%;
+  text-align: left;
 }
 
 .vertical-center {
@@ -69,6 +121,8 @@ div {
 }
 
 .o-h2 {
+  font-family: NeueHaas;
+  font-weight: 300;
   line-height: 1;
   text-transform: none;
   font-size: 50pt;
@@ -76,11 +130,21 @@ div {
 }
 
 .o-h3 {
+  font-family: NeueHaas;
+  font-weight: 300;
   line-height: 1;
   text-transform: none;
   font-size: 200pt;
   white-space: nowrap;
+}
+
+.o-h4 {
   font-family: NeueHaas;
+  font-weight: 400;
+  line-height: 2.5;
+  text-transform: none;
+  font-size: 16pt;
+  letter-spacing: 1.5pt;
 }
 
 .image-background {
@@ -102,12 +166,6 @@ div {
   justify-content: center;
   align-items: center;
   border: var(--border-2);
-}
-
-html {
-  background-color: #FFF7F2;
-  /* background-image: linear-gradient(to right, #FAFAFA, #F5F5F5);
-  -webkit-tap-highlight-color: #8C9EFF; */
 }
 
 .c-direction-block {
@@ -133,9 +191,10 @@ html {
   position: fixed;
   height: 40px;
   width: 40px;
-  top: 40px;
-  left: 40px;
+  top: 50px;
+  left: 50px;
   border: var(--border-2);
+  z-index: 1;
 }
 
 .logo {

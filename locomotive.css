@@ -302,27 +302,6 @@ textarea {
   text-decoration: none
 }
 
-@font-face {
-  font-family: Canela;
-  src: url('Fonts/Canela/Canela-Regular.otf');
-}
-
-@font-face {
-  font-family: Canela;
-  font-weight: bold;
-  src: url('Fonts/Canela/Canela-Medium.otf');
-}
-
-@font-face {
-  font-family: NeueHaas;
-  src: url('Fonts/NeueHaas/HaasGrotDisp-45Light.otf');
-}
-
-@font-face {
-  font-family: MaisonNeue;
-  src: url('Fonts/MaisonNeue/Maison Neue Medium.otf');
-}
-
 /* html {
   color: #212121;
   font-family: Canela;
@@ -439,7 +418,7 @@ font-size:12vw
   font-size: 2rem
 } */
 
-.o-h3,h3 {
+/* .o-h3,h3 {
   font-size: 1.5rem
 }
 
@@ -453,7 +432,7 @@ font-size:12vw
 
 .o-h6,h6 {
   font-size: .9375rem
-}
+} */
 
 /* .o-container {
   position: relative;
@@ -1680,7 +1659,7 @@ padding:100vh 0 0
 }
 
 .c-scrollbar {
-width: 10px;
+width: 0px;
 position: absolute;
 right: 0;
 top: 0;
