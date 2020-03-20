@@ -163,7 +163,7 @@ div {
   position: relative;
   top: -30%;
   width: 100%;
-  left: 0%;
+  left: auto;
   right: auto;
   height: 50%;
   background: none;
