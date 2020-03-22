@@ -31,6 +31,17 @@ div {
   background: none !important;
 }
 
+a {
+  transition: color .3s cubic-bezier(.215,.61,.355,1);
+  color: #212121
+}
+
+@media (min-width: 1200px) {
+  a:focus,a:hover {
+    color: orange;
+  }
+}
+
 /* ::-moz-selection {
   background-color: transparent;
   color: #DF8159 !important;

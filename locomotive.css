@@ -355,17 +355,6 @@ html:not(.has-scroll-init) {
   overflow: hidden
 }
 
-a {
-  transition: color .3s cubic-bezier(.215,.61,.355,1);
-  color: #272727
-}
-
-@media (min-width: 1200px) {
-  a:focus,a:hover {
-    color:#fff
-  }
-}
-
 a.-underline {
   text-decoration: underline
 }
