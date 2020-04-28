@@ -95,7 +95,7 @@ a {
 
 @font-face {
   font-family: MaisonNeue;
-  src: url('Fonts/MaisonNeue/Maison Neue Medium.otf');
+  src: url('Fonts/MaisonNeue/Maison Neue Book.otf');
 }
 
 @font-face {
@@ -177,14 +177,14 @@ a {
 }
 
 .o-h1 {
-  font-family: UntitledSans;
+  font-family: MaisonNeue;
   line-height: 1;
   text-transform: none;
   font-size: 100pt;
 }
 
 .o-h2 {
-  font-family: UntitledSans;
+  font-family: MaisonNeue;
   font-weight: 300;
   line-height: 1.25;
   text-transform: none;
@@ -193,16 +193,16 @@ a {
 }
 
 .o-h3 {
-  font-family: UntitledSans;
+  font-family: MaisonNeue;
   font-weight: 300;
   line-height: 1;
   text-transform: none;
-  font-size: 240pt;
+  font-size: 300pt;
   white-space: nowrap;
 }
 
 .o-h4 {
-  font-family: UntitledSans;
+  font-family: MaisonNeue;
   font-weight: 400;
   line-height: 2;
   text-transform: none;
