@@ -1,7 +1,7 @@
 :root {
-  --border-1: none;
-  --border-2: none;
-  --border-3: none;
+  --border-1: solid;
+  --border-2: dotted;
+  --border-3: dashed;
 }
 
 html {
@@ -136,9 +136,9 @@ a {
 
 .c-header_title {
   position: absolute;
-  height: auto;
+  height: 100%;
   width: 100%;
-  top: 50%;
+  top: 0%;
   perspective: 600px;
   -webkit-perspective: 600px;
   text-align: center;
