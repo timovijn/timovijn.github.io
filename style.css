@@ -1,7 +1,7 @@
 :root {
-  --border-1: solid;
-  --border-2: dotted;
-  --border-3: dashed;
+  --border-1: none;
+  --border-2: none;
+  --border-3: none;
 }
 
 html {
