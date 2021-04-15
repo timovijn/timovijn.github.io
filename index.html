@@ -5,6 +5,48 @@
   <link rel="stylesheet" type="text/css" href="locomotive.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="shortcut icon" type="image/x-icon" href="Images/Favicon.ico">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+	<script>
+	  (function($){
+    $.fn.extend({ 
+        rotaterator: function(options) {
+ 
+            var defaults = {
+                fadeSpeed: 500,
+                pauseSpeed: 100,
+				child:null
+            };
+             
+            var options = $.extend(defaults, options);
+         
+            return this.each(function() {
+                  var o =options;
+                  var obj = $(this);                
+                  var items = $(obj.children(), obj);
+				  items.each(function() {$(this).hide();})
+				  if(!o.child){var next = $(obj).children(':first');
+				  }else{var next = o.child;
+				  }
+				  $(next).fadeIn(o.fadeSpeed, function() {
+						$(next).delay(o.pauseSpeed).fadeOut(o.fadeSpeed, function() {
+							var next = $(this).next();
+
+							if (next.length == 0){
+									next = $(obj).children(':first');
+							}
+							$(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
+						})
+					});
+            });
+        }
+    });
+})(jQuery);
+
+ $(document).ready(function() {
+        $('#rotate').rotaterator({fadeSpeed:500, pauseSpeed:500});
+ });
+	</script>
 </head>
 
 <body>
@@ -13,13 +55,16 @@
     <img class="logo vertical-center" src="./Images/Logo.svg">
   </div>
 
+  <!-- <h1> I am <div id="rotate"> <div>awesome.</div> <div>invincible.</div> <div>unbeatable.</div> <div>indestructible.</div> </div> </h1> -->
+  <!-- <h1> I am <div id="rotate"> <div>awesome.</div> <div>invincible.</div> <div>unbeatable.</div> <div>indestructible.</div> </div> </h1> -->
+
   <div class="o-scroll" id="js-scroll" data-scroll-container>
 
     <div data-scroll-section>
       <div class="o-container">
         <header class="c-header" id="header" data-scroll data-scroll-speed="3">
           <h1 class="c-header_title o-h1 vertical-center">
-            Quantodian
+            <div id="rotate"> The Lives of <span>Jerry & Bruce</span> <span>Steve & Hanya</span> <span>Michael & Phil</span> <span>Others</spans> </div>
           </h1>
         </header>
       </div>
@@ -29,7 +74,7 @@
       <div class="o-container">
         <header class="c-header" id="header" data-scroll data-scroll-speed="3">
           <h1 class="c-header_title o-h2 vertical-center">
-            A pioneer in building rule-based investment strategies
+            How beautiful, the things that can be learnt when considerate of the lives of others
           </h1>
         </header>
       </div>
@@ -50,17 +95,99 @@
     <div data-scroll-section>
       <div class="o-container">
         <header class="c-header" id="header" data-scroll data-scroll-speed="3">
+          <h1 class="c-header_title left o-h5 vertical-center">
+            <span class="name"> Jerry Lorenzo </span>
+            <span class="description"> Kerwin Frost Talks to Jerry Lorenzo <span class="date"><br>2021 04 02</span> </span>
+          </h1>
           <h1 class="c-header_title right o-h4 vertical-center">
-            At Quantodian we are focused on high-conviction value and momentum
-            factor exposures, and make only a handful of trades per year or less
-            to reach our objectives.<br><br><br>We are PhD&rsquo;s with
-            scientific and technical backgrounds that learned best practice from
-            professional traders. Being able to distinguish the true from the
-            false and applying that in our models has given us several
-            computerized ways to obtain and maintain our edge in trading.
+            <span class="text"> My goal was: how am I like a hundred percent of the time the same Jerry Lorenzo, you know what I mean?&mdash;So that I don&rsquo;t have to change when I get home or I don&rsquo;t have to be someone different when I&rsquo;m at work. My thought process was initially to try to keep everything kind of separate and in doing so I was approaching things with a different level of integrity or a different character. Not only what I was touching at home, in my work, and my friends, and my social life; they were inconsistent. And so um, that inconsistency in and of itself is like a heavy weight to have to turn off and on these different characters, and so, like you said, I&rsquo;ve just been trying to be the same person like a hundred percent of the time so that if you hit me up like &ldquo;yo we&rsquo;re gonna do this interview&rdquo; I don&rsquo;t have to prepare; who I am is who I am. It relieves me of the preparation, it relieves me of that off and on switch. Obviously there&rsquo;s times, you know, we need to be on for other reasons; if we&rsquo;re you know, in the boardroom, talking to Adidas, or whatever that may be. It comes from the same spirit, but the level of on-ness is maybe higher but yeah, who I am at the end of the day, I&rsquo;ve been striving to just kind of be the same Jerry all the time. </span>
           </h1>
         </header>
       </div>
+
+      <div class="o-container">
+        <header class="c-header" id="header" data-scroll data-scroll-speed="3">
+          <h1 class="c-header_title left o-h5 vertical-center">
+            <span class="name"> Toddy Smith & Darren Nuzzo </span>
+            <span class="description"> Farewell, Honeymoon Phase <br> from <br> I&rsquo;ll Give You a Dollar If You Consider This Art <span class="date"><br>2019 10</span> </span>
+          </h1>
+          <h1 class="c-header_title right o-h4 vertical-center">
+            <span class="text"> he showered
+              <br> then
+              <br> she showered
+              <br> not in any specific order
+              <br> just one
+              <br> and then
+              <br> the other </span>
+          </h1>
+        </header>
+      </div>
+
+      <div class="o-container">
+        <header class="c-header" id="header" data-scroll data-scroll-speed="3">
+          <h1 class="c-header_title left o-h5 vertical-center">
+            <span class="name"> Wentworth Miller </span>
+            <span class="description"> Human Rights Campain dinner speech <span class="date"><br>2013 09 10</span> </span>
+          </h1>
+          <h1 class="c-header_title right o-h4 vertical-center">
+            <span class="text"> Also, like many of you here tonight, growing up I was a target. Speaking the right way, standing the right way, holding your wrist the right way. Every day was a test and there were a thousand ways to fail. A thousand ways to betray yourself. To not live up to someone else&rsquo;s standard of what was acceptable, of what was normal. And when you failed the test, which was guaranteed, there was a price to pay. Emotional. Psychological. Physical. And like many of you, I paid that price, more than once, in a variety of ways. </span>
+          </h1>
+        </header>
+      </div>
+
+      <div class="o-container">
+        <header class="c-header" id="header" data-scroll data-scroll-speed="3">
+          <h1 class="c-header_title left o-h5 vertical-center">
+            <span class="name"> Me </span>
+            <span class="description date"> <span class="date">2021 03 21</span> </span>
+          </h1>
+          <h1 class="c-header_title right o-h4 vertical-center">
+            <span class="text"> Us humans, we have thought of many different concepts to be able to handle  all these people on a limited amount of inhabitable land. By that I mean money, grades, job titles, etc. In a lot of ways, that is a good thing. What is bad however, is that people tend to evaluate themselves by (the lack of) these concepts. One must always be aware of that what actually serves oneself versus that what is made up to serve society. </span>
+          </h1>
+        </header>
+      </div>
+
+      <div class="o-container">
+        <header class="c-header" id="header" data-scroll data-scroll-speed="3">
+          <h1 class="c-header_title left o-h5 vertical-center">
+            <span class="name"> &lsquo;Nanny McPhee&rsquo; </span>
+            <span class="description"> Nanny McPhee <span class="date"><br>2005 10 28</span> </span>
+          </h1>
+          <h1 class="c-header_title right o-h4 vertical-center">
+            <span class="text"> There is something you should understand
+            <br> about the way I work.
+            <br> When you need me
+            <br> but do not want me,
+            <br> then I must stay.
+            <br> When you want me
+            <br> but no longer need me,
+            <br> then I have to go.
+            <br> It&rsquo;s rather sad, really,
+            <br> but there it is. </span>
+          </h1>
+        </header>
+      </div>
+
+      <div class="o-container">
+        <header class="c-header" id="header" data-scroll data-scroll-speed="3">
+          <h1 class="c-header_title left o-h5 vertical-center">
+            <span class="name"> Hanya Yanagihara </span>
+            <span class="description"> A Little Life <span class="date"><br>2015 03 10</span> </span>
+          </h1>
+          <h1 class="c-header_title right o-h4 vertical-center">
+            <span class="text"> When Marco was finished, he looked at himself in his new suit: here was such anonymity, such protection. Even if someone were to accidentally graze his back,   he was wearing enough layers so that they&rsquo;d never be able to feel the ridges of scars beneath. Everything was covered, everything was hidden. If he was standing still, he could be anyone, someone blank and invisible.
+            &ldquo;I think maybe half an inch more,&rdquo; Marco said, pinching the back of the jacket in around the waist. He swatted some threads off his sleeve. &ldquo;Now all you need&rsquo;s a good haircut.&rdquo;
+            He found Harold waiting for him in the tie area, reading a magazine. &ldquo;Are you done?&rdquo; he asked, as if the entire trip had been his idea and Harold had been the one indulging his whimsy.
+            Over their early dinner, he tried to thank Harold again, but every time he tried, Harold stopped him with increasing impatience. &ldquo;Has anyone ever told you that sometimes you just need to accept things, Jude?&rdquo; he finally asked.
+            &ldquo;You said to never just accept anything,&rdquo; he reminded Harold.
+            &ldquo;That&rsquo;s in the classroom and in the courtroom,&rdquo; Harold said. &ldquo;Not in life. You see, Jude, in life, sometimes nice things happen to good people. You don&rsquo;t need to worry&mdash;they don&rsquo;t happen as often as they should. But when they do, it&rsquo;s up to the good people to just say &lsquo;thank you,&rsquo; and move on, and maybe consider that the person who&rsquo;s doing the nice thing gets a bang out of it as well, and really isn&rsquo;t in the mood to hear all the reasons that the person for whom he&rsquo;s done the nice thing doesn&rsquo;t think he deserves it or isn&rsquo;t worthy of it.&rdquo;
+            He shut up then, and after dinner he let Harold drive him back to his apartment on Hereford Street. &ldquo;Besides,&rdquo; Harold said as he was getting out of the car, &ldquo;you looked really, really nice. You&rsquo;re a great-looking kid; I hope someone&rsquo;s told you that before.&rdquo; And then, before he could protest, &ldquo;Acceptance, Jude.&rdquo;
+            So he swallowed what he was going to say. &ldquo;Thank you, Harold. For everything.&rdquo;
+            &ldquo;You&rsquo;re very welcome, Jude,&rdquo; said Harold. &ldquo;I&rsquo;ll see you Monday.&rdquo; </span>
+          </h1>
+        </header>
+      </div>
+
     </div>
 
     <div data-scroll-section>
@@ -82,6 +209,8 @@
   <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous"></script>
   <script nomodule src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous"></script>
   <script src="locomotive.js"></script>
+
+  <script src="https://static.cargo.site/scripts/loader.js" data-name="cycle"></script>
 
 </body>
 
