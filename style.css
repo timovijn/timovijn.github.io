@@ -100,13 +100,26 @@ a {
 
 @font-face {
   font-family: MaisonNeue;
-  src: url('Fonts/MaisonNeue/Maison Neue Book.otf');
+  src: url('Fonts/MaisonNeue/Maison\ Neue\ Book.otf');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  font-style: italic;
+  src: url('Fonts/MaisonNeue/Maison\ Neue\ Book\ Italic.otf');
 }
 
 @font-face {
   font-family: MaisonNeue;
   font-weight: 600;
-  src: url('Fonts/MaisonNeue/Maison Neue Demi.otf');
+  src: url('Fonts/MaisonNeue/Maison\ Neue\ Demi.otf');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  font-style: italic;
+  font-weight: 600;
+  src: url('Fonts/MaisonNeue/Maison\ Neue\ Demi\ Italic.otf');
 }
 
 @font-face {
@@ -125,7 +138,7 @@ a {
   justify-content: center;
   margin: auto;
   text-align: center;
-  height: 0px;
+  height: 100%;
 }
 
 .o-container {
@@ -185,12 +198,11 @@ a {
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1;
-  border: solid;
 }
 
 .o-h1 {
   font-family: MaisonNeue;
-  line-height: 1;
+  line-height: 1.1;
   text-transform: none;
   font-size: 50pt;
 }
@@ -252,6 +264,19 @@ a {
 .o-container .left:hover .name { display: none; }
 .o-container .left:hover .description { display: inline; }
 
+.item-image-container {
+  position: absolute;
+  right: 0%;
+  width: 75%;
+  object-fit: contain;
+  bottom: 0%;
+  z-index: -1;
+}
+
+.item-image-image {
+
+}
+
 .image-background {
   position: relative;
   top: -30%;
@@ -293,4 +318,14 @@ a {
 
 .logo:hover {
   opacity: 0.5;
+}
+
+.item-image-label {
+  text-align: right;
+  border: solid;
+  position: absolute;
+  right: 105%;
+  bottom: 0%;
+  z-index: 0;
+  width: 100px;
 }
