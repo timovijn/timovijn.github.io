@@ -340,6 +340,6 @@ a {
 .rounded-box2 {
   width: 50%;
   height: 50%;
-  border-radius: 50pt;
-  background-color: black;
+  border: solid;
+  /* color: black; */
 }
