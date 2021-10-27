@@ -98,7 +98,7 @@ a {
   src: url('Fonts/NeueHaas/HaasGrotDisp-65Medium.otf');
 }
 
-@font-face {
+/* @font-face {
   font-family: MaisonNeue;
   src: url('Fonts/MaisonNeue/Maison\ Neue\ Book.otf');
 }
@@ -120,6 +120,54 @@ a {
   font-style: italic;
   font-weight: 600;
   src: url('Fonts/MaisonNeue/Maison\ Neue\ Demi\ Italic.otf');
+} */
+
+/* @font-face {
+  font-family: MaisonNeue;
+  src: url('Fonts/JJannon/JJannon-Book.woff2');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  font-style: italic;
+  src: url('Fonts/JJannon/JJannon-Book-Italic.woff2');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  font-weight: 600;
+  src: url('Fonts/JJannon/JJannon-Bold.woff2');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  font-style: italic;
+  font-weight: 600;
+  src: url('Fonts/JJannon/JJannon-Bold-Italic.woff2');
+} */
+
+@font-face {
+  font-family: MaisonNeue;
+  src: url('Fonts/Cambon/Cambon-Regular.otf');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  font-style: italic;
+  src: url('Fonts/Cambon/Cambon-Italic.otf');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  font-weight: 600;
+  src: url('Fonts/Cambon/Cambon-Bold.otf');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  font-style: italic;
+  font-weight: 600;
+  src: url('Fonts/Cambon/Cambon-BoldItalic.otf');
 }
 
 @font-face {
@@ -166,7 +214,7 @@ a {
   top: 0%;
   perspective: 600px;
   -webkit-perspective: 600px;
-  text-align: center;
+  /* text-align: left; */
   border: var(--border-3);
 }
 
@@ -205,6 +253,7 @@ a {
   line-height: 1.1;
   text-transform: none;
   font-size: 50pt;
+
 }
 
 .o-h2 {
@@ -231,7 +280,7 @@ a {
   font-weight: 400;
   line-height: 1.8;
   text-transform: none;
-  font-size: 11pt;
+  font-size: 13pt;
   letter-spacing: 1pt;
 }
 
@@ -277,13 +326,34 @@ a {
 
 }
 
-.image-background {
-  position: relative;
-  top: -30%;
+.welcome-image-container {
+  position: absolute;
+  right: 0%;
   width: 100%;
-  left: auto;
+  object-fit: cover;
+  bottom: 0%;
+  z-index: -1;
+}
+
+.welcome-image-image {
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  transition: 1s ease-in-out;
+}
+
+.welcome-image-image:hover {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.image-background {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  left: 0%;
   right: auto;
-  height: 50%;
+  height: 80%;
+  /* border-radius: 50pt; */
   background: none;
   background-image:
   linear-gradient(to bottom, rgba(255, 247, 242, 1.00), rgba(255, 247, 242, 0.00)),
@@ -297,6 +367,35 @@ a {
   align-items: center;
   border: var(--border-2);
 }
+
+.image-background2 {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  left: 0%;
+  right: auto;
+  height: 100%;
+  /* border-radius: 50pt; */
+  background: none;
+  background-image:
+  /* linear-gradient(to bottom, rgba(255, 247, 242, 1.00), rgba(255, 247, 242, 0.00)), */
+  url(./Images/abbey.png);
+  background-position: bottom right;
+  background-size: cover;
+  z-index: -1;
+  color: #212121;
+  font-size: 15pt;
+  justify-content: center;
+  align-items: center;
+  border: var(--border-2);
+}
+
+/* .rounded-box {
+  width: 100%;
+  height: 100%;
+  border-radius: 50pt;
+  background-color: #fcf4ef;
+} */
 
 .logo_container {
   position: fixed;
@@ -334,7 +433,7 @@ a {
   width: 100%;
   height: 100%;
   border-radius: 50pt;
-  background-color: white;
+  background-color: #fcf4ef;
 }
 
 .rounded-box2 {
@@ -343,3 +442,49 @@ a {
   border: solid;
   /* color: black; */
 }
+
+.align-left {
+  margin-right: auto;
+}
+
+.circle {
+	position: absolute;
+  /* border: solid 1px #ccc; */
+	width: 20px;
+	height: 20px;
+  border-radius: 50%;
+  -webkit-animation: glowing 5s ease-in-out infinite alternate;
+  -moz-animation: glowing 5s ease-in-out infinite alternate;
+  animation: glowing 5s ease-in-out infinite alternate;
+}
+
+.background-circle {
+	position: absolute;
+  /* border: solid 1px #ccc; */
+	width: 200px;
+	height: 200px;
+  border-radius: 50%;
+  -webkit-animation: glowing 5s ease-in-out infinite alternate;
+  -moz-animation: glowing 5s ease-in-out infinite alternate;
+  animation: glowing 5s ease-in-out infinite alternate;
+}
+
+/* .circle {
+  width: 100px;
+  height: 100px;
+  border-radius:50%;
+  background-color: #fff;
+  -webkit-animation: glowing 1s ease-in-out infinite alternate;
+  -moz-animation: glowing 1s ease-in-out infinite alternate;
+  animation: glowing 1s ease-in-out infinite alternate;
+} */
+
+@-webkit-keyframes glowing {
+  from {
+    box-shadow: 0 0 20px white, 0 0 40px #fff, 0 0 60px #f0f, 0 0 80px #0ff, 0 0 100px #e60073, 0 0 120px #e60073, 0 0 140px #e60073;
+  }
+  to {
+    box-shadow: 0 0 20px white, 0 0 40px #ff4da6, 0 0 60px #ff4da6, 0 0 80px #ff4da6, 0 0 120px #ff4da6, 0 0 140px #ff4da6, 0 0 160px #ff4da6;
+  }
+}
+
