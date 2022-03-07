@@ -4,8 +4,8 @@ jQuery(document).ready(function() {
     var xp = 0, yp = 0;
      
     $(document).mousemove(function(e){
-      mouseX = e.pageX - 10;
-      mouseY = e.pageY - 10;
+      mouseX = e.pageX - 15;
+      mouseY = e.pageY - 15;
     });
       
     setInterval(function(){
