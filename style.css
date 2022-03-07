@@ -309,6 +309,10 @@ a {
   font-weight: 400;
 }
 
+.description .type {
+  font-weight: 400;
+}
+
 .o-container .left .description { display: none; }
 .o-container .left:hover .name { display: none; }
 .o-container .left:hover .description { display: inline; }
