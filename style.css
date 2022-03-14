@@ -170,6 +170,30 @@ a {
   src: url('Fonts/Cambon/Cambon-BoldItalic.otf');
 }
 
+/* @font-face {
+  font-family: MaisonNeue;
+  src: url('Fonts/Editorial New/EditorialNew-Regular.otf');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  font-style: italic;
+  src: url('Fonts/Cambon/Cambon-Italic.otf');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  font-weight: 600;
+  src: url('Fonts/Editorial New/EditorialNew-Medium.otf');
+}
+
+@font-face {
+  font-family: MaisonNeue;
+  font-style: italic;
+  font-weight: 600;
+  src: url('Fonts/Editorial New/EditorialNew-Medium.otf');
+} */
+
 @font-face {
   font-family: Inter;
   src: url('Fonts/Inter/Inter-Regular.woff2');
@@ -280,7 +304,7 @@ a {
   font-weight: 400;
   line-height: 1.8;
   text-transform: none;
-  font-size: 13pt;
+  font-size: 12pt;
   letter-spacing: 1pt;
 }
 
@@ -317,19 +341,6 @@ a {
 .o-container .left:hover .name { display: none; }
 .o-container .left:hover .description { display: inline; }
 
-.item-image-container {
-  position: absolute;
-  right: 0%;
-  width: 75%;
-  object-fit: contain;
-  bottom: 0%;
-  z-index: -1;
-}
-
-.item-image-image {
-
-}
-
 .welcome-image-container {
   position: absolute;
   right: 0%;
@@ -347,17 +358,22 @@ a {
   border-radius: 50% 50% 50% 50%;
 }
 
-/* .welcome-image-image {
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  transition: 1s ease-in-out;
+.item-image-container {
+  position: absolute;
+  right: 0%;
+  width: 75%;
+  object-fit: cover;
+  bottom: 0%;
+  z-index: -1;
 }
 
-.welcome-image-image:hover {
-  border-top-left-radius: 0%;
-  border-top-right-radius: 0%;
-  transition: 1s ease-in-out;
-} */
+.item-image-image {
+  transition: all 1s ease-in-out;
+}
+
+.item-image-image:hover {
+  border-radius: 50% 50% 50% 50%;
+}
 
 .image-background {
   position: absolute;
